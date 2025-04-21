@@ -1,0 +1,10 @@
+D:\Word_Memorizing_Game\bin\Debug\Word_Memorizing_Game.exe.config
+D:\Word_Memorizing_Game\bin\Debug\Word_Memorizing_Game.exe
+D:\Word_Memorizing_Game\bin\Debug\Word_Memorizing_Game.pdb
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.csproj.AssemblyReference.cache
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.LoginAndRegistrationForm.resources
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.Properties.Resources.resources
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.csproj.GenerateResource.cache
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.csproj.CoreCompileInputs.cache
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.exe
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.pdb
