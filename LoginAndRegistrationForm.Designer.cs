@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.loginPasswordTb = new System.Windows.Forms.TextBox();
+            this.loginUsernameTb = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.registerButton = new System.Windows.Forms.Button();
+            this.registerPasswordTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.registerUsernameTb = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,11 +63,21 @@
             this.panel1.Size = new System.Drawing.Size(800, 67);
             this.panel1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(12, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(264, 32);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Login And Registration";
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.loginButton);
+            this.panel2.Controls.Add(this.loginPasswordTb);
+            this.panel2.Controls.Add(this.loginUsernameTb);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.panel4);
@@ -75,6 +85,53 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 343);
             this.panel2.TabIndex = 1;
+            // 
+            // loginButton
+            // 
+            this.loginButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.loginButton.Location = new System.Drawing.Point(164, 263);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(138, 48);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // loginPasswordTb
+            // 
+            this.loginPasswordTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.loginPasswordTb.Location = new System.Drawing.Point(164, 198);
+            this.loginPasswordTb.Name = "loginPasswordTb";
+            this.loginPasswordTb.Size = new System.Drawing.Size(162, 34);
+            this.loginPasswordTb.TabIndex = 2;
+            // 
+            // loginUsernameTb
+            // 
+            this.loginUsernameTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.loginUsernameTb.Location = new System.Drawing.Point(164, 105);
+            this.loginUsernameTb.Name = "loginUsernameTb";
+            this.loginUsernameTb.Size = new System.Drawing.Size(162, 34);
+            this.loginUsernameTb.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(19, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 31);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Password:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(19, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 31);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Username:";
             // 
             // panel4
             // 
@@ -85,6 +142,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(368, 62);
             this.panel4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(16, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 32);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Login";
             // 
             // label1
             // 
@@ -98,16 +165,53 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.registerButton);
+            this.panel3.Controls.Add(this.registerPasswordTb);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.registerUsernameTb);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(420, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(368, 343);
             this.panel3.TabIndex = 2;
+            // 
+            // registerButton
+            // 
+            this.registerButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.registerButton.Location = new System.Drawing.Point(156, 263);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(138, 48);
+            this.registerButton.TabIndex = 3;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // registerPasswordTb
+            // 
+            this.registerPasswordTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.registerPasswordTb.Location = new System.Drawing.Point(156, 200);
+            this.registerPasswordTb.Name = "registerPasswordTb";
+            this.registerPasswordTb.Size = new System.Drawing.Size(162, 34);
+            this.registerPasswordTb.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(26, 201);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 31);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Password:";
+            // 
+            // registerUsernameTb
+            // 
+            this.registerUsernameTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.registerUsernameTb.Location = new System.Drawing.Point(156, 105);
+            this.registerUsernameTb.Name = "registerUsernameTb";
+            this.registerUsernameTb.Size = new System.Drawing.Size(162, 34);
+            this.registerUsernameTb.TabIndex = 2;
             // 
             // panel5
             // 
@@ -119,46 +223,6 @@
             this.panel5.Size = new System.Drawing.Size(368, 62);
             this.panel5.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(16, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 32);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Login";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(264, 32);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Login And Registration";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(19, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 31);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Username:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(19, 218);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 31);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Password:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -169,68 +233,6 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Username:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(26, 218);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 31);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Password:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(164, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 34);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(164, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 34);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(156, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 34);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(156, 217);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 34);
-            this.textBox4.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(164, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 48);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(156, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 48);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Register";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // LoginAndRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -240,9 +242,11 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginAndRegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login And Registration";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginAndRegistrationForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -271,12 +275,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox loginPasswordTb;
+        private System.Windows.Forms.TextBox loginUsernameTb;
+        private System.Windows.Forms.TextBox registerPasswordTb;
+        private System.Windows.Forms.TextBox registerUsernameTb;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button registerButton;
     }
 }
 
