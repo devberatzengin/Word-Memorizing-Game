@@ -32,27 +32,19 @@ namespace Word_Memorizing_Game
                 return;
             }
 
-            SqlConnection sqlConnection = new SqlConnection("Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True");
-            sqlConnection.Open();
+            User user = new User();
+            bool isLoggedIn = user.Login(loginUsernameTb.Text.Trim(), loginPasswordTb.Text.Trim());
 
-            SqlCommand sqlCommand = new SqlCommand("SELECT UserName, UserPassword FROM tblUser WHERE UserName = @username AND UserPassword = @password", sqlConnection);
-
-            // Parametreler
-            sqlCommand.Parameters.AddWithValue("@username", loginUsernameTb.Text.Trim());
-            sqlCommand.Parameters.AddWithValue("@password", loginPasswordTb.Text.Trim());
-
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            DataTable dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-
-            // Kullanıcı kontrol 
-            if (dataTable.Rows.Count > 0)
+            if (isLoggedIn)
             {
-                MessageBox.Show("Giriş Başarılı");
+                MessageBox.Show($"Giriş Başarılı! Hoş geldin, {user.UserName} (ID: {user.UserId})");
+                MainMenuForm mainMenu = new MainMenuForm();
+                mainMenu.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Giriş Başarısız");
+                MessageBox.Show("Giriş başarısız. Lütfen bilgileri kontrol ediniz.");
             }
         }
 
@@ -64,40 +56,10 @@ namespace Word_Memorizing_Game
                 return;
             }
 
-            SqlConnection sqlConnection = new SqlConnection("Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True");
-            sqlConnection.Open();
+            User user = new User();
+            bool isRegistered = user.Register(registerUsernameTb.Text.Trim(), registerPasswordTb.Text.Trim(), out string message);
 
-            // Kullanıcı kontrol 
-            SqlCommand checkUserCommand = new SqlCommand("SELECT COUNT(*) FROM tblUser WHERE UserName = @username", sqlConnection);
-            checkUserCommand.Parameters.AddWithValue("@username", registerUsernameTb.Text.Trim());
-            int userExists = (int)checkUserCommand.ExecuteScalar();
-
-            if (userExists > 0)
-            {
-                MessageBox.Show("Bu kullanıcı adı zaten alınmış!");
-                return;
-            }
-
-            // Max UserId'i al
-            SqlCommand getMaxIdCommand = new SqlCommand("SELECT ISNULL(MAX(UserId), 0) FROM tblUser", sqlConnection);
-            int nextUserId = (int)getMaxIdCommand.ExecuteScalar() + 1;
-
-            // Yeni kullanıcıyı ekle
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO tblUser (UserId, UserName, UserPassword) VALUES (@id, @username, @password)", sqlConnection);
-            sqlCommand.Parameters.AddWithValue("@id", nextUserId);
-            sqlCommand.Parameters.AddWithValue("@username", registerUsernameTb.Text.Trim());
-            sqlCommand.Parameters.AddWithValue("@password", registerPasswordTb.Text.Trim());
-
-            int result = sqlCommand.ExecuteNonQuery();
-
-            if (result > 0)
-            {
-                MessageBox.Show("Kayıt Başarılı!");
-            }
-            else
-            {
-                MessageBox.Show("Kayıt başarısız. Lütfen tekrar deneyin.");
-            }
+            MessageBox.Show(message);
         }
     }
 }

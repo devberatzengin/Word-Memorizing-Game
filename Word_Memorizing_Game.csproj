@@ -52,10 +52,26 @@
     <Compile Include="LoginAndRegistrationForm.Designer.cs">
       <DependentUpon>LoginAndRegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="WordAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordAddForm.Designer.cs">
+      <DependentUpon>WordAddForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginAndRegistrationForm.resx">
       <DependentUpon>LoginAndRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WordAddForm.resx">
+      <DependentUpon>WordAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

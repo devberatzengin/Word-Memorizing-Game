@@ -8,3 +8,5 @@ D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.csproj.GenerateResource.c
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.csproj.CoreCompileInputs.cache
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.exe
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.pdb
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.MainMenuForm.resources
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.WordAddForm.resources
