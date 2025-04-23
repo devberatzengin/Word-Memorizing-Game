@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Policy;
 
 namespace Word_Memorizing_Game
 {
-    internal class User
+    public class User
     {
         public int UserId { get; private set; }
         public string UserName { get; private set; }
@@ -27,9 +28,9 @@ namespace Word_Memorizing_Game
 
                 if (dt.Rows.Count > 0)
                 {
-                    UserId = Convert.ToInt32(dt.Rows[0]["UserId"]);
-                    UserName = dt.Rows[0]["UserName"].ToString();
-                    UserPassword = dt.Rows[0]["UserPassword"].ToString();
+                    this.UserId = Convert.ToInt32(dt.Rows[0]["UserId"]);
+                    this.UserName = dt.Rows[0]["UserName"].ToString();
+                    this.UserPassword = dt.Rows[0]["UserPassword"].ToString();
                     return true;
                 }
 
@@ -74,6 +75,16 @@ namespace Word_Memorizing_Game
                     return false;
                 }
             }
+        }
+
+        
+        public string getusername()
+        {
+            return UserName;
+        }
+        public int getuserid()
+        {
+            return UserId;
         }
     }
 }

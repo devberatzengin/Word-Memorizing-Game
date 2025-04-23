@@ -38,7 +38,7 @@ namespace Word_Memorizing_Game
             if (isLoggedIn)
             {
                 MessageBox.Show($"Giriş Başarılı! Hoş geldin, {user.UserName} (ID: {user.UserId})");
-                MainMenuForm mainMenu = new MainMenuForm();
+                MainMenuForm mainMenu = new MainMenuForm(user);
                 mainMenu.Show();
                 this.Hide();
             }

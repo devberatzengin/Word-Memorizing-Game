@@ -12,17 +12,20 @@ namespace Word_Memorizing_Game
 {
     public partial class MainMenuForm : Form
     {
-        public MainMenuForm()
+
+
+        public User currentUser;
+
+
+        public MainMenuForm(User user)
         {
             InitializeComponent();
+            currentUser = user;
+            userDetails.Text = $"{user.UserName}       ID:{user.UserId}";
         }
 
-        
 
-        
-        
-        
-        
+            
         private void logoutButton_Click(object sender, EventArgs e)
         {
             LoginAndRegistrationForm loginForm = new LoginAndRegistrationForm();
@@ -36,7 +39,7 @@ namespace Word_Memorizing_Game
 
         private void addNewWordButton_Click(object sender, EventArgs e)
         {
-            WordAddForm wordAddForm = new WordAddForm();
+            WordAddForm wordAddForm = new WordAddForm(currentUser);
             wordAddForm.Show();
             this.Hide();
 

@@ -13,9 +13,12 @@ namespace Word_Memorizing_Game
 {
     public partial class WordAddForm : Form
     {
-        public WordAddForm()
+
+        private User currentUser;
+        public WordAddForm(User user)
         {
             InitializeComponent();
+            currentUser = user;
         }
 
 
@@ -24,7 +27,7 @@ namespace Word_Memorizing_Game
 
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
-            MainMenuForm mainMenuForm = new MainMenuForm();
+            MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
             mainMenuForm.Show();
             this.Hide();
 
@@ -38,10 +41,6 @@ namespace Word_Memorizing_Game
 
 
         private readonly string connectionString = "Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True";
-
-
-
-
 
         private void saveButton_Click(object sender, EventArgs e)
         {
