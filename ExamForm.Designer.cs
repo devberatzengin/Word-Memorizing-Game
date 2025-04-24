@@ -33,15 +33,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.engWordLabel = new System.Windows.Forms.Label();
             this.exampleSentenceLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.option1Rb = new System.Windows.Forms.RadioButton();
             this.option2Rb = new System.Windows.Forms.RadioButton();
             this.option3Rb = new System.Windows.Forms.RadioButton();
             this.option4Rb = new System.Windows.Forms.RadioButton();
             this.checkAnswerButton = new System.Windows.Forms.Button();
+            this.wordPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wordPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,26 +94,6 @@
             this.exampleSentenceLabel.Size = new System.Drawing.Size(303, 25);
             this.exampleSentenceLabel.TabIndex = 6;
             this.exampleSentenceLabel.Text = "Example sentence for english word";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(429, 103);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(311, 264);
-            this.panel2.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(71, 122);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(185, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "English Word Picture";
             // 
             // option1Rb
             // 
@@ -173,6 +152,15 @@
             this.checkAnswerButton.TabIndex = 12;
             this.checkAnswerButton.Text = "Check and next question";
             this.checkAnswerButton.UseVisualStyleBackColor = true;
+            this.checkAnswerButton.Click += new System.EventHandler(this.checkAnswerButton_Click);
+            // 
+            // wordPictureBox
+            // 
+            this.wordPictureBox.Location = new System.Drawing.Point(418, 103);
+            this.wordPictureBox.Name = "wordPictureBox";
+            this.wordPictureBox.Size = new System.Drawing.Size(331, 261);
+            this.wordPictureBox.TabIndex = 13;
+            this.wordPictureBox.TabStop = false;
             // 
             // ExamForm
             // 
@@ -180,12 +168,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.wordPictureBox);
             this.Controls.Add(this.checkAnswerButton);
             this.Controls.Add(this.option4Rb);
             this.Controls.Add(this.option3Rb);
             this.Controls.Add(this.option2Rb);
             this.Controls.Add(this.option1Rb);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.exampleSentenceLabel);
             this.Controls.Add(this.engWordLabel);
             this.Controls.Add(this.panel1);
@@ -196,8 +184,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExamForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wordPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,14 +195,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button mainMenuButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton option1Rb;
-        private System.Windows.Forms.RadioButton option2Rb;
-        private System.Windows.Forms.RadioButton option3Rb;
-        private System.Windows.Forms.RadioButton option4Rb;
         private System.Windows.Forms.Button checkAnswerButton;
         public System.Windows.Forms.Label exampleSentenceLabel;
         public System.Windows.Forms.Label engWordLabel;
+        public System.Windows.Forms.RadioButton option1Rb;
+        public System.Windows.Forms.RadioButton option2Rb;
+        public System.Windows.Forms.RadioButton option3Rb;
+        public System.Windows.Forms.RadioButton option4Rb;
+        public System.Windows.Forms.PictureBox wordPictureBox;
     }
 }
