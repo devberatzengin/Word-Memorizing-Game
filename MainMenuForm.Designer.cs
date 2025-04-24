@@ -33,6 +33,7 @@
             this.logoutButton = new System.Windows.Forms.Button();
             this.addNewWordButton = new System.Windows.Forms.Button();
             this.userDetails = new System.Windows.Forms.Label();
+            this.examButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,12 +91,24 @@
             this.userDetails.TabIndex = 3;
             this.userDetails.Text = "label1";
             // 
+            // examButton
+            // 
+            this.examButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.examButton.Location = new System.Drawing.Point(12, 186);
+            this.examButton.Name = "examButton";
+            this.examButton.Size = new System.Drawing.Size(249, 71);
+            this.examButton.TabIndex = 3;
+            this.examButton.Text = "Exam";
+            this.examButton.UseVisualStyleBackColor = true;
+            this.examButton.Click += new System.EventHandler(this.examButton_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.examButton);
             this.Controls.Add(this.addNewWordButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button addNewWordButton;
         private System.Windows.Forms.Label userDetails;
+        private System.Windows.Forms.Button examButton;
     }
 }

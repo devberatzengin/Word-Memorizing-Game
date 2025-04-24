@@ -44,5 +44,12 @@ namespace Word_Memorizing_Game
             this.Hide();
 
         }
+
+        private void examButton_Click(object sender, EventArgs e)
+        {
+            ExamForm examForm = new ExamForm(currentUser);
+            examForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -21,10 +21,6 @@ namespace Word_Memorizing_Game
             currentUser = user;
         }
 
-
-        
-
-
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
             MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
@@ -38,10 +34,7 @@ namespace Word_Memorizing_Game
             Application.Exit(); 
         }
 
-
-
         private readonly string connectionString = "Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True";
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(engWordNameTb.Text) || string.IsNullOrWhiteSpace(turWordNameTb.Text) || string.IsNullOrWhiteSpace(wordPicLocationTb.Text) || string.IsNullOrWhiteSpace(sampleSentTb.Text))

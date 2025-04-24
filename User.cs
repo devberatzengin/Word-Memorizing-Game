@@ -77,14 +77,19 @@ namespace Word_Memorizing_Game
             }
         }
 
-        
-        public string getusername()
+            
+        public void startExam()
         {
-            return UserName;
+            
         }
-        public int getuserid()
-        {
-            return UserId;
-        }
+    
+
+    
+    
+    
+    
+    
+    
+    
     }
 }
