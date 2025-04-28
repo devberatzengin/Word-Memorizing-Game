@@ -238,7 +238,7 @@ namespace Word_Memorizing_Game
             }
         }
 
-        public void startGame(WordleForm form)
+        public void startGame(WordleForm wordleForm)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -250,7 +250,7 @@ namespace Word_Memorizing_Game
 
                 Random rnd = new Random();
                 int randomWordId = rnd.Next(1, maxWordCount);
-                form.CurrentWordId = randomWordId;
+                wordleForm.CurrentWordId = randomWordId;
 
                 string wordQuery = "SELECT WordID, EngWordName, len(EngWordName) as 'lenght' FROM tblWords WHERE WordID = @wordid";
                 SqlCommand wordCommand = new SqlCommand(wordQuery, connection);
@@ -270,30 +270,89 @@ namespace Word_Memorizing_Game
 
                 reader.Close();
 
-                for (int i = 1; i <= wordLenght; i++)
-                {
-                    string textboxname = $"textBox{i}";
-                    if (form.Controls.Find(textboxname, true).FirstOrDefault() is TextBox textBox)
-                    {
-                        textBox.Visible = true;
-                        textBox.Text = " " + engWord[i-1].ToString();
-                        textBox.BackColor = Color.AliceBlue;
-                        textBox.ForeColor = Color.Bisque;
-                    }
-                }
+                // FlowLayoutPanel'in boyutunu kelime uzunluğuna göre ayarla
+                wordleForm.flowLayoutPanel1.Width = wordLenght * 60 + 10;
 
-                for (int i = wordLenght + 1; i <= 15; i++)
+                int attempts = 0;
+
+                // Button click event
+                wordleForm.submitButton.Click += (sender, e) =>
                 {
-                    string textboxname = $"textBox{i}";
-                    if (form.Controls.Find(textboxname, true).FirstOrDefault() is TextBox textBox)
+                    if (attempts >= 5) return; 
+
+                    string userInput = wordleForm.inputTb.Text.ToUpper();  
+                    if (userInput.Length == wordLenght)
                     {
-                        textBox.Visible = false;
+                        for (int i = 0; i < wordLenght; i++)
+                        {
+                            TextBox textBox = (TextBox)wordleForm.flowLayoutPanel1.Controls[attempts * wordLenght + i];
+                            char userChar = userInput[i];
+                            char actualChar = char.ToUpper(engWord[i]); 
+
+                            // if letter and pozission is correct
+                            if (userChar == actualChar)
+                            {
+                                if (textBox.BackColor != Color.Green)
+                                {
+                                    textBox.BackColor = Color.Green;
+                                    textBox.Text = userChar.ToString();  
+                                }
+                            }
+                            // if correct letter wrong position 
+                            else if (engWord.ToUpper().Contains(userChar.ToString()))
+                            {
+                                textBox.BackColor = Color.Yellow;
+                                textBox.Text = userChar.ToString();
+                            }
+                            // if letter isnt correct
+                            else
+                            {
+                                textBox.BackColor = Color.Gray;
+                                textBox.Text = "";  
+                            }
+                        }
+
+                        attempts++; 
+
+                        if (userInput.Equals(engWord, StringComparison.OrdinalIgnoreCase))
+                        {
+                            MessageBox.Show("Tebrikler! Doğru tahmin!");
+                        }
+
+                        if (attempts < 5)
+                        {
+                            CreateNewTextBoxes(wordleForm, wordLenght, attempts);
+                        }
                     }
-                }
+                };
+
+                CreateNewTextBoxes(wordleForm, wordLenght, attempts);
             }
         }
 
+        private void CreateNewTextBoxes(WordleForm wordleForm, int wordLength, int attempts)
+        {
+            int count = attempts * wordLength + 1;
 
+            for (int i = 1; i <= wordLength; i++)
+            {
+                TextBox textBox = new TextBox();
+                textBox.Name = "textBox" + count;
+                textBox.Size = new Size(50, 50);
+                textBox.Font = new Font("Arial", 20);
+                textBox.MaxLength = 1;
+                textBox.TextAlign = HorizontalAlignment.Center;
+                textBox.BackColor = Color.LightGray;
+                textBox.BorderStyle = BorderStyle.None;
+                textBox.Location = new Point(10 + (i - 1) * 60, 10 + attempts * 60); // Yeni satır
+                textBox.ReadOnly = false;  // Kullanıcının yazabilmesi için false
+                textBox.Text = " ";
+                textBox.Visible = true;
+                textBox.Enabled = true;  // Kullanıcı girebilir
+                wordleForm.flowLayoutPanel1.Controls.Add(textBox);
+                count++;
+            }
+        }
 
     }
 }
