@@ -271,7 +271,7 @@ namespace Word_Memorizing_Game
                 reader.Close();
 
                 // FlowLayoutPanel'in boyutunu kelime uzunluğuna göre ayarla
-                wordleForm.flowLayoutPanel1.Width = wordLenght * 60 + 10;
+                wordleForm.flowLayoutPanel1.Width = wordLenght * 65 + 10;
 
                 int attempts = 0;
 
@@ -292,16 +292,16 @@ namespace Word_Memorizing_Game
                             // if letter and pozission is correct
                             if (userChar == actualChar)
                             {
-                                if (textBox.BackColor != Color.Green)
+                                if (textBox.BackColor != Color.FromArgb(11, 163, 0))
                                 {
-                                    textBox.BackColor = Color.Green;
+                                    textBox.BackColor = Color.FromArgb(11, 163, 0);
                                     textBox.Text = userChar.ToString();  
                                 }
                             }
                             // if correct letter wrong position 
                             else if (engWord.ToUpper().Contains(userChar.ToString()))
                             {
-                                textBox.BackColor = Color.Yellow;
+                                textBox.BackColor = Color.FromArgb(255, 213, 61);
                                 textBox.Text = userChar.ToString();
                             }
                             // if letter isnt correct
@@ -338,8 +338,8 @@ namespace Word_Memorizing_Game
             {
                 TextBox textBox = new TextBox();
                 textBox.Name = "textBox" + count;
-                textBox.Size = new Size(50, 50);
-                textBox.Font = new Font("Arial", 20);
+                textBox.Size = new Size(60, 60);
+                textBox.Font = new Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
                 textBox.MaxLength = 1;
                 textBox.TextAlign = HorizontalAlignment.Center;
                 textBox.BackColor = Color.LightGray;
