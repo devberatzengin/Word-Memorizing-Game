@@ -11,3 +11,4 @@ D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.pdb
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.MainMenuForm.resources
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.WordAddForm.resources
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.ExamForm.resources
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.WordleForm.resources

@@ -21,11 +21,7 @@ namespace Word_Memorizing_Game
         {
             InitializeComponent();
             this.currentUser = currentUser;
-
-
             currentUser.startExam(this);
-
-
         }
 
         private void mainMenuButton_Click(object sender, EventArgs e)
@@ -65,7 +61,9 @@ namespace Word_Memorizing_Game
             }
             else
             {
-                MessageBox.Show("Yanlış cevap tekrar dene.");
+                MessageBox.Show("Yanlış cevap.");
+                User newq = new User();
+                newq.startExam(this);
             }
 
             User next = new User();

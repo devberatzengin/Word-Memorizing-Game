@@ -7,6 +7,8 @@ using System.Security.Policy;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.IO;
 using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Word_Memorizing_Game
 {
@@ -114,6 +116,7 @@ namespace Word_Memorizing_Game
                 }
                 reader.Close();
 
+                
                 if (File.Exists(picturePath))
                 {
                     form.wordPictureBox.Image = Image.FromFile(picturePath);
@@ -165,6 +168,8 @@ namespace Word_Memorizing_Game
 
                 
                 form.Tag = correctIndex;             
+            
+               
             }
         }
 
@@ -233,8 +238,60 @@ namespace Word_Memorizing_Game
             }
         }
 
+        public void startGame(WordleForm form)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
+                string maxwordcountQuery = "SELECT COUNT(*) FROM tblWords";
+                SqlCommand maxwordcountCommand = new SqlCommand(maxwordcountQuery, connection);
+                int maxWordCount = (int)maxwordcountCommand.ExecuteScalar();
 
+                Random rnd = new Random();
+                int randomWordId = rnd.Next(1, maxWordCount);
+                form.CurrentWordId = randomWordId;
+
+                string wordQuery = "SELECT WordID, EngWordName, len(EngWordName) as 'lenght' FROM tblWords WHERE WordID = @wordid";
+                SqlCommand wordCommand = new SqlCommand(wordQuery, connection);
+                wordCommand.Parameters.AddWithValue("@wordid", randomWordId);
+
+                SqlDataReader reader = wordCommand.ExecuteReader();
+
+                string engWord = "";
+                string engWordLenght = "";
+                int wordLenght = 0;
+                if (reader.Read())
+                {
+                    engWord = reader["EngWordName"].ToString();
+                    engWordLenght = reader["lenght"].ToString();
+                }
+                wordLenght = Convert.ToInt32(engWordLenght);
+
+                reader.Close();
+
+                for (int i = 1; i <= wordLenght; i++)
+                {
+                    string textboxname = $"textBox{i}";
+                    if (form.Controls.Find(textboxname, true).FirstOrDefault() is TextBox textBox)
+                    {
+                        textBox.Visible = true;
+                        textBox.Text = " " + engWord[i-1].ToString();
+                        textBox.BackColor = Color.AliceBlue;
+                        textBox.ForeColor = Color.Bisque;
+                    }
+                }
+
+                for (int i = wordLenght + 1; i <= 15; i++)
+                {
+                    string textboxname = $"textBox{i}";
+                    if (form.Controls.Find(textboxname, true).FirstOrDefault() is TextBox textBox)
+                    {
+                        textBox.Visible = false;
+                    }
+                }
+            }
+        }
 
 
 

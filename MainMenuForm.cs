@@ -51,5 +51,12 @@ namespace Word_Memorizing_Game
             examForm.Show();
             this.Hide();
         }
+
+        private void wordleGameButton_Click(object sender, EventArgs e)
+        {
+            WordleForm wordleForm = new WordleForm(currentUser);
+            wordleForm.Show();  
+            this.Hide();
+        }
     }
 }
