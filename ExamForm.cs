@@ -38,36 +38,56 @@ namespace Word_Memorizing_Game
 
         private void checkAnswerButton_Click(object sender, EventArgs e)
         {
-            int selectedIndex = -1;
-
-            if (option1Rb.Checked) selectedIndex = 0; else 
-            if (option2Rb.Checked) selectedIndex = 1; else
-            if (option3Rb.Checked) selectedIndex = 2; else
-            if (option4Rb.Checked) selectedIndex = 3;
-
-            if (selectedIndex == -1)
+            if (currentUser.maxQuestionCount > 0)
             {
-                MessageBox.Show("Lütfen bir şık seçin.");
-                return;
-            }
+                int selectedIndex = -1;
 
-            int correctIndex = (int)this.Tag;
+                if (option1Rb.Checked) selectedIndex = 0;
+                else
+                if (option2Rb.Checked) selectedIndex = 1;
+                else
+                if (option3Rb.Checked) selectedIndex = 2;
+                else
+                if (option4Rb.Checked) selectedIndex = 3;
 
-            if (selectedIndex == correctIndex)
-            {
-                MessageBox.Show("Dogru cevap!");
-                User user = new User();
-                user.SaveProgress(currentUser.UserId, this.CurrentWordId); 
+                if (selectedIndex == -1)
+                {
+                    MessageBox.Show("Lütfen bir şık seçin.");
+                    return;
+                }
+
+                int correctIndex = (int)this.Tag;
+
+                if (selectedIndex == correctIndex)
+                {
+                    MessageBox.Show("Dogru cevap!");
+                    User user = new User();
+                    user.SaveProgress(currentUser.UserId, this.CurrentWordId);
+                }
+                else
+                {
+                    MessageBox.Show("Yanlış cevap.");
+                    User newq = new User();
+                    newq.startExam(this);
+                }
+
+                User next = new User();
+                next.startExam(this);
+                currentUser.maxQuestionCount--;
             }
             else
             {
-                MessageBox.Show("Yanlış cevap.");
-                User newq = new User();
-                newq.startExam(this);
+                MessageBox.Show("Sınav tamamlandı.");
+                checkAnswerButton.Enabled = false;
+                option1Rb.Enabled = false;
+                option2Rb.Enabled = false;
+                option3Rb.Enabled = false;
+                option4Rb.Enabled = false;
+                return;
             }
-
-            User next = new User();
-            next.startExam(this);
+            
         }
+    
+
     }
 }

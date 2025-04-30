@@ -72,9 +72,9 @@
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.submitButton.Location = new System.Drawing.Point(590, 269);
+            this.submitButton.Location = new System.Drawing.Point(564, 164);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(105, 51);
+            this.submitButton.Size = new System.Drawing.Size(138, 60);
             this.submitButton.TabIndex = 20;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // inputTb
             // 
             this.inputTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.inputTb.Location = new System.Drawing.Point(590, 212);
+            this.inputTb.Location = new System.Drawing.Point(564, 102);
             this.inputTb.Name = "inputTb";
             this.inputTb.Size = new System.Drawing.Size(198, 38);
             this.inputTb.TabIndex = 21;

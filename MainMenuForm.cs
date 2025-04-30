@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word_Memorizing_Game.Properties;
 
 
 namespace Word_Memorizing_Game
@@ -57,6 +58,13 @@ namespace Word_Memorizing_Game
         {
             WordleForm wordleForm = new WordleForm(currentUser);
             wordleForm.Show();  
+            this.Hide();
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm(currentUser);
+            settingsForm.Show();
             this.Hide();
         }
     }

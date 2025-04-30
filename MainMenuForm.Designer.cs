@@ -35,6 +35,7 @@
             this.addNewWordButton = new System.Windows.Forms.Button();
             this.examButton = new System.Windows.Forms.Button();
             this.wordleGameButton = new System.Windows.Forms.Button();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 67);
+            this.panel1.Size = new System.Drawing.Size(671, 67);
             this.panel1.TabIndex = 1;
             // 
             // userDetails
@@ -73,7 +74,7 @@
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.logoutButton.Location = new System.Drawing.Point(661, 15);
+            this.logoutButton.Location = new System.Drawing.Point(532, 18);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(127, 38);
             this.logoutButton.TabIndex = 2;
@@ -84,7 +85,7 @@
             // addNewWordButton
             // 
             this.addNewWordButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.addNewWordButton.Location = new System.Drawing.Point(12, 83);
+            this.addNewWordButton.Location = new System.Drawing.Point(12, 82);
             this.addNewWordButton.Name = "addNewWordButton";
             this.addNewWordButton.Size = new System.Drawing.Size(249, 71);
             this.addNewWordButton.TabIndex = 2;
@@ -106,7 +107,7 @@
             // wordleGameButton
             // 
             this.wordleGameButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.wordleGameButton.Location = new System.Drawing.Point(12, 287);
+            this.wordleGameButton.Location = new System.Drawing.Point(12, 285);
             this.wordleGameButton.Name = "wordleGameButton";
             this.wordleGameButton.Size = new System.Drawing.Size(249, 71);
             this.wordleGameButton.TabIndex = 4;
@@ -114,12 +115,24 @@
             this.wordleGameButton.UseVisualStyleBackColor = true;
             this.wordleGameButton.Click += new System.EventHandler(this.wordleGameButton_Click);
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.settingsButton.Location = new System.Drawing.Point(365, 83);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(249, 71);
+            this.settingsButton.TabIndex = 4;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(671, 448);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.wordleGameButton);
             this.Controls.Add(this.examButton);
             this.Controls.Add(this.addNewWordButton);
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Label userDetails;
         private System.Windows.Forms.Button examButton;
         private System.Windows.Forms.Button wordleGameButton;
+        private System.Windows.Forms.Button settingsButton;
     }
 }

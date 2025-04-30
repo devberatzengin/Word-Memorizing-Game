@@ -12,3 +12,4 @@ D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.MainMenuForm.resources
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.WordAddForm.resources
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.ExamForm.resources
 D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.WordleForm.resources
+D:\Word_Memorizing_Game\obj\Debug\Word_Memorizing_Game.SettingsForm.resources

@@ -18,6 +18,8 @@ namespace Word_Memorizing_Game
         public string UserName { get; private set; }
         public string UserPassword { get; private set; }
 
+        public int maxQuestionCount = 10;
+
         private readonly string connectionString = "Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True";
 
         public bool Login(string username, string password)
@@ -351,6 +353,19 @@ namespace Word_Memorizing_Game
                 textBox.Enabled = true;  // Kullanıcı girebilir
                 wordleForm.flowLayoutPanel1.Controls.Add(textBox);
                 count++;
+            }
+        }
+
+        public void setMaxQuestionCount(int maxQuestionCount)
+        {
+            if (maxQuestionCount < 1 || maxQuestionCount > 100)
+            {
+                MessageBox.Show("Lütfen 1 ile 100 arasında bir değer girin.");
+                return;
+            }else
+            {
+                this.maxQuestionCount = maxQuestionCount;
+                MessageBox.Show("Soru sayısı başarıyla ayarlandı.");
             }
         }
 
