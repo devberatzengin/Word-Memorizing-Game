@@ -130,8 +130,8 @@ Tarihe bağlı otomatik kelime seçimi algoritması uygulanmıştır.
 ## 🎁 Ekstra Özellikler
 
 - [x] Kelime şıkları rastgele
-- [x] Soruları boş bırakma ve geri dönme
-- [x] Zorluk seviyesine göre filtreleme
+- [ ] Soruları boş bırakma ve geri dönme
+- [ ] Zorluk seviyesine göre filtreleme
 - [ ] Sınav sorumlusu ekranı (yolda)
 
 ---
