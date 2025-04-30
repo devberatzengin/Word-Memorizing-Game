@@ -58,14 +58,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 67);
+            this.panel1.Size = new System.Drawing.Size(622, 67);
             this.panel1.TabIndex = 1;
             // 
             // userDetails
             // 
             this.userDetails.AutoSize = true;
             this.userDetails.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.userDetails.Location = new System.Drawing.Point(249, 18);
+            this.userDetails.Location = new System.Drawing.Point(188, 18);
             this.userDetails.Name = "userDetails";
             this.userDetails.Size = new System.Drawing.Size(73, 31);
             this.userDetails.TabIndex = 3;
@@ -74,7 +74,7 @@
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.logoutButton.Location = new System.Drawing.Point(532, 18);
+            this.logoutButton.Location = new System.Drawing.Point(483, 15);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(127, 38);
             this.logoutButton.TabIndex = 2;
@@ -107,7 +107,7 @@
             // wordleGameButton
             // 
             this.wordleGameButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.wordleGameButton.Location = new System.Drawing.Point(12, 285);
+            this.wordleGameButton.Location = new System.Drawing.Point(319, 186);
             this.wordleGameButton.Name = "wordleGameButton";
             this.wordleGameButton.Size = new System.Drawing.Size(249, 71);
             this.wordleGameButton.TabIndex = 4;
@@ -118,7 +118,7 @@
             // settingsButton
             // 
             this.settingsButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.settingsButton.Location = new System.Drawing.Point(365, 83);
+            this.settingsButton.Location = new System.Drawing.Point(319, 82);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(249, 71);
             this.settingsButton.TabIndex = 4;
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(671, 448);
+            this.ClientSize = new System.Drawing.Size(622, 300);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.wordleGameButton);
             this.Controls.Add(this.examButton);

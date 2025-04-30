@@ -333,6 +333,9 @@ namespace Word_Memorizing_Game
                         if (userInput.Equals(engWord, StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show("Tebrikler! Doğru tahmin!");
+                            wordleForm.inputTb.Enabled = false;
+                            wordleForm.submitButton.Enabled = false;
+                            return;
                         }
 
                         if (attempts < 5)

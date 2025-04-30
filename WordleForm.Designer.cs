@@ -45,13 +45,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 67);
+            this.panel1.Size = new System.Drawing.Size(1075, 67);
             this.panel1.TabIndex = 4;
             // 
             // mainMenuButton
             // 
             this.mainMenuButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mainMenuButton.Location = new System.Drawing.Point(650, 15);
+            this.mainMenuButton.Location = new System.Drawing.Point(925, 12);
             this.mainMenuButton.Name = "mainMenuButton";
             this.mainMenuButton.Size = new System.Drawing.Size(138, 38);
             this.mainMenuButton.TabIndex = 2;
@@ -72,7 +72,7 @@
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.submitButton.Location = new System.Drawing.Point(564, 164);
+            this.submitButton.Location = new System.Drawing.Point(783, 162);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(138, 60);
             this.submitButton.TabIndex = 20;
@@ -83,13 +83,13 @@
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 102);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(520, 278);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(746, 278);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // inputTb
             // 
             this.inputTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.inputTb.Location = new System.Drawing.Point(564, 102);
+            this.inputTb.Location = new System.Drawing.Point(783, 102);
             this.inputTb.Name = "inputTb";
             this.inputTb.Size = new System.Drawing.Size(198, 38);
             this.inputTb.TabIndex = 21;
@@ -99,7 +99,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1075, 450);
             this.Controls.Add(this.inputTb);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.flowLayoutPanel1);

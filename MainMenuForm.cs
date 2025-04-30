@@ -66,6 +66,6 @@ namespace Word_Memorizing_Game
             SettingsForm settingsForm = new SettingsForm(currentUser);
             settingsForm.Show();
             this.Hide();
-        }
+        } 
     }
 }
