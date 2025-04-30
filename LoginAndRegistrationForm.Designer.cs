@@ -46,11 +46,21 @@
             this.registerUsernameTb = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.resetPasswordTb = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.resetUsernameTb = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,7 +70,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 67);
+            this.panel1.Size = new System.Drawing.Size(1246, 67);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -233,12 +243,93 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Username:";
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.resetButton);
+            this.panel6.Controls.Add(this.resetPasswordTb);
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.resetUsernameTb);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Location = new System.Drawing.Point(826, 95);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(408, 343);
+            this.panel6.TabIndex = 4;
+            // 
+            // resetButton
+            // 
+            this.resetButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.resetButton.Location = new System.Drawing.Point(206, 263);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(138, 48);
+            this.resetButton.TabIndex = 3;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // resetPasswordTb
+            // 
+            this.resetPasswordTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.resetPasswordTb.Location = new System.Drawing.Point(206, 201);
+            this.resetPasswordTb.Name = "resetPasswordTb";
+            this.resetPasswordTb.Size = new System.Drawing.Size(162, 34);
+            this.resetPasswordTb.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(26, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(172, 31);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "New Password:";
+            // 
+            // resetUsernameTb
+            // 
+            this.resetUsernameTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.resetUsernameTb.Location = new System.Drawing.Point(206, 103);
+            this.resetUsernameTb.Name = "resetUsernameTb";
+            this.resetUsernameTb.Size = new System.Drawing.Size(162, 34);
+            this.resetUsernameTb.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(408, 62);
+            this.panel7.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(23, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(183, 32);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Reset Password";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(26, 106);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 31);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Username:";
+            // 
             // LoginAndRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1246, 450);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -257,6 +348,10 @@
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -281,6 +376,14 @@
         private System.Windows.Forms.TextBox registerUsernameTb;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.TextBox resetPasswordTb;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox resetUsernameTb;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 

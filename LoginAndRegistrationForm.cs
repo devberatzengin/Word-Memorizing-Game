@@ -61,5 +61,27 @@ namespace Word_Memorizing_Game
 
             MessageBox.Show(message);
         }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(resetUsernameTb.Text) || string.IsNullOrEmpty(resetPasswordTb.Text))
+            {
+                MessageBox.Show("Lütfen boş bırakmayınız!");
+                return;
+            }else
+            {
+                User user = new User();
+                bool isReset = user.ResetPassword(resetUsernameTb.Text.Trim(), resetPasswordTb.Text.Trim());
+                if (isReset)
+                {
+                    MessageBox.Show("Şifre sıfırlama başarılı.");
+                }
+                else
+                {
+                    MessageBox.Show("Şifre sıfırlama başarısız. Lütfen bilgileri kontrol ediniz.");
+                }
+            }
+
+        }
     }
 }

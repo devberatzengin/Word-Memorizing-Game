@@ -86,6 +86,20 @@ namespace Word_Memorizing_Game
             }
         }
 
+        public bool ResetPassword(string username, string newpassword)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE tblUser SET UserPassword = @newpassword WHERE UserName = @username";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@newpassword", newpassword);
+                int result = command.ExecuteNonQuery();
+                return result > 0;
+            }
+        }
+
         public void startExam(ExamForm form)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
