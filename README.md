@@ -85,7 +85,7 @@ Tarihe bağlı otomatik kelime seçimi algoritması uygulanmıştır.
 ## 📸 Ekran Görüntüleri
 
 ### 🔨 Scrum Table
-![Scrum Table](assets/images/Settings.png)
+![Scrum Table](assets/images/ScrumTable.png)
 
 ### 🔐 Giriş Ekranı
 ![Giriş Ekranı](assets/images/LoginPage.png)
