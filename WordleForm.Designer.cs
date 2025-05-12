@@ -34,6 +34,7 @@
             this.submitButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.inputTb = new System.Windows.Forms.TextBox();
+            this.KeyBoard = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.submitButton.Location = new System.Drawing.Point(783, 162);
+            this.submitButton.Location = new System.Drawing.Point(780, 378);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(138, 60);
             this.submitButton.TabIndex = 20;
@@ -81,7 +82,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 102);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 160);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(746, 278);
             this.flowLayoutPanel1.TabIndex = 5;
@@ -89,10 +90,20 @@
             // inputTb
             // 
             this.inputTb.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.inputTb.Location = new System.Drawing.Point(783, 102);
+            this.inputTb.Location = new System.Drawing.Point(780, 320);
             this.inputTb.Name = "inputTb";
             this.inputTb.Size = new System.Drawing.Size(198, 38);
             this.inputTb.TabIndex = 21;
+            // 
+            // KeyBoard
+            // 
+            this.KeyBoard.AutoSize = true;
+            this.KeyBoard.Font = new System.Drawing.Font("Yu Gothic UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KeyBoard.Location = new System.Drawing.Point(12, 93);
+            this.KeyBoard.Name = "KeyBoard";
+            this.KeyBoard.Size = new System.Drawing.Size(662, 38);
+            this.KeyBoard.TabIndex = 22;
+            this.KeyBoard.Text = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
             // 
             // WordleForm
             // 
@@ -100,6 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1075, 450);
+            this.Controls.Add(this.KeyBoard);
             this.Controls.Add(this.inputTb);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -125,5 +137,6 @@
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.TextBox inputTb;
         public System.Windows.Forms.Button submitButton;
+        public System.Windows.Forms.Label KeyBoard;
     }
 }

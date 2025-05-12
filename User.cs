@@ -9,6 +9,7 @@ using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Word_Memorizing_Game
 {
@@ -283,11 +284,10 @@ namespace Word_Memorizing_Game
                     engWordLenght = reader["lenght"].ToString();
                 }
                 wordLenght = Convert.ToInt32(engWordLenght);
-
                 reader.Close();
 
                 // FlowLayoutPanel'in boyutunu kelime uzunluğuna göre ayarla
-                wordleForm.flowLayoutPanel1.Width = wordLenght * 65 + 10;
+                wordleForm.flowLayoutPanel1.Width = wordLenght * 45 + 10;
 
                 int attempts = 0;
 
@@ -296,41 +296,76 @@ namespace Word_Memorizing_Game
                 {
                     if (attempts >= 5) return; 
 
-                    string userInput = wordleForm.inputTb.Text.ToUpper();  
+                    string userInput = wordleForm.inputTb.Text.ToUpper();
+
+
                     if (userInput.Length == wordLenght)
                     {
+                        
+                        char[] actualChars = engWord.ToUpper().ToCharArray();
+                        bool[] indicator = new bool[wordLenght]; // for the marking of the letters like hangman
+
+                        //for correct letters and correct positions (green)
                         for (int i = 0; i < wordLenght; i++)
                         {
                             TextBox textBox = (TextBox)wordleForm.flowLayoutPanel1.Controls[attempts * wordLenght + i];
                             char userChar = userInput[i];
-                            char actualChar = char.ToUpper(engWord[i]); 
 
-                            // if letter and pozission is correct
-                            if (userChar == actualChar)
+                            if (userChar == actualChars[i])
                             {
-                                if (textBox.BackColor != Color.FromArgb(11, 163, 0))
-                                {
-                                    textBox.BackColor = Color.FromArgb(11, 163, 0);
-                                    textBox.Text = userChar.ToString();  
-                                }
-                            }
-                            // if correct letter wrong position 
-                            else if (engWord.ToUpper().Contains(userChar.ToString()))
-                            {
-                                textBox.BackColor = Color.FromArgb(255, 213, 61);
+                                indicator[i] = true;
+                                textBox.BackColor = Color.FromArgb(11, 163, 0);
                                 textBox.Text = userChar.ToString();
                             }
-                            // if letter isnt correct
                             else
                             {
-                                textBox.BackColor = Color.Gray;
-                                textBox.Text = "";  
+                                textBox.Text = " "; 
                             }
                         }
 
-                        attempts++; 
+                        // correct letters but wrong positions (yellow)
+                        for (int i = 0; i < wordLenght; i++)
+                        {
+                            TextBox textBox = (TextBox)wordleForm.flowLayoutPanel1.Controls[attempts * wordLenght + i];
+                            char userChar = userInput[i];
 
-                        if (userInput.Equals(engWord, StringComparison.OrdinalIgnoreCase))
+                            // if is not green
+                            if (textBox.BackColor != Color.FromArgb(11, 163, 0))
+                            {
+                                bool found = false;
+                                for (int j = 0; j < wordLenght; j++)
+                                {
+                                    // the letter was not used and it is in the word
+                                    if (!indicator[j] && actualChars[j] == userChar)
+                                    {
+                                        indicator[j] = true; // make it used
+                                        textBox.BackColor = Color.FromArgb(255, 213, 61);
+                                        textBox.Text = userChar.ToString();
+                                        found = true;
+                                        break;
+                                    }
+                                }
+
+                                // if not matched anywhere
+                                if (!found)
+                                {
+                                    textBox.BackColor = Color.Gray;
+
+                                    int wrongCharLocation = wordleForm.KeyBoard.Text.IndexOf(userChar);
+
+                                    if (wrongCharLocation != -1)
+                                    {
+                                        // remove the character from the keyboard
+                                        wordleForm.KeyBoard.Text = wordleForm.KeyBoard.Text.Replace(wordleForm.KeyBoard.Text[wrongCharLocation], Convert.ToChar(" "));
+                                    }
+                                }
+
+                            }
+                        }
+
+                        attempts++;
+
+                        if (userInput.ToUpper().Equals(engWord.ToUpper(), StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show("Tebrikler! Doğru tahmin!");
                             wordleForm.inputTb.Enabled = false;
@@ -343,6 +378,8 @@ namespace Word_Memorizing_Game
                             CreateNewTextBoxes(wordleForm, wordLenght, attempts);
                         }
                     }
+                    
+                    
                 };
 
                 CreateNewTextBoxes(wordleForm, wordLenght, attempts);
@@ -357,17 +394,17 @@ namespace Word_Memorizing_Game
             {
                 TextBox textBox = new TextBox();
                 textBox.Name = "textBox" + count;
-                textBox.Size = new Size(60, 60);
+                textBox.Size = new Size(40, 40);
                 textBox.Font = new Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold);
                 textBox.MaxLength = 1;
                 textBox.TextAlign = HorizontalAlignment.Center;
                 textBox.BackColor = Color.LightGray;
                 textBox.BorderStyle = BorderStyle.None;
-                textBox.Location = new Point(10 + (i - 1) * 60, 10 + attempts * 60); // Yeni satır
-                textBox.ReadOnly = false;  // Kullanıcının yazabilmesi için false
+                textBox.Location = new Point(10 + (i - 1) * 40, 10 + attempts * 40); 
+                textBox.ReadOnly = true;  
                 textBox.Text = " ";
                 textBox.Visible = true;
-                textBox.Enabled = true;  // Kullanıcı girebilir
+                textBox.Enabled = false;  
                 wordleForm.flowLayoutPanel1.Controls.Add(textBox);
                 count++;
             }
