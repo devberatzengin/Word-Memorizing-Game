@@ -82,8 +82,32 @@ Tarihe bağlı otomatik kelime seçimi algoritması uygulanmıştır.
 5. Uygulamayı çalıştır ve giriş yap!
 
 ---
+## 📸 Ekran Görüntüleri
 
-## 🧠 Kimin Ne Yaptığı (Opsiyonel)
+### 🔨 Scrum Table
+![Scrum Table](assets/images/ScrumTable.png)
+
+### 🔐 Giriş Ekranı
+![Giriş Ekranı](assets/images/LoginPage.png)
+
+### 🏠 Ana Menü
+![Ana Menü](assets/images/MainMEnu.png)
+
+### 📝 Sınav Arayüzü
+![Sınav Arayüzü](assets/images/ExamScreen.png)
+
+### ⚙️ Ayarlar Sayfası
+![Ayarlar Sayfası](assets/images/Settings.png)
+
+### 🏫 Wordle Sayfası
+![Wordle Sayfası](assets/images/Wordle.png)
+
+### ➕ Word Adding Sayfası
+![Kelime Ekleme Sayfası](assets/images/WordAdd.png)
+
+---
+
+## 🧠 Kimin Ne Yaptığı
 
 - 👤 **@devberatzengin** – Student Developer & Proje Sahibi
 
@@ -106,8 +130,8 @@ Tarihe bağlı otomatik kelime seçimi algoritması uygulanmıştır.
 ## 🎁 Ekstra Özellikler
 
 - [x] Kelime şıkları rastgele
-- [x] Soruları boş bırakma ve geri dönme
-- [x] Zorluk seviyesine göre filtreleme
+- [ ] Soruları boş bırakma ve geri dönme
+- [ ] Zorluk seviyesine göre filtreleme
 - [ ] Sınav sorumlusu ekranı (yolda)
 
 ---
