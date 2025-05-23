@@ -195,7 +195,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button mainMenuButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button checkAnswerButton;
         public System.Windows.Forms.Label exampleSentenceLabel;
         public System.Windows.Forms.Label engWordLabel;
         public System.Windows.Forms.RadioButton option1Rb;
@@ -203,5 +202,6 @@
         public System.Windows.Forms.RadioButton option3Rb;
         public System.Windows.Forms.RadioButton option4Rb;
         public System.Windows.Forms.PictureBox wordPictureBox;
+        public System.Windows.Forms.Button checkAnswerButton;
     }
 }

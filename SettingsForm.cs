@@ -43,7 +43,7 @@ namespace Word_Memorizing_Game
             using (SqlConnection connection = new SqlConnection("Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True"))
             {
                 connection.Open();
-                string query = "update tblWordProgress set CorrectCount = 0 , IsLearned = 0 where UserID = @UserId";
+                string query = "update tblWordProgress set CorrectCount = 0 , IsLearned = 0 , LastCorrectDate =null, NextTestDate = null where UserID = @UserId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@UserId", currentUser.UserId);
                 command.ExecuteNonQuery();

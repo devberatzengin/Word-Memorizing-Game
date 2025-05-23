@@ -38,17 +38,14 @@ namespace Word_Memorizing_Game
 
         private void checkAnswerButton_Click(object sender, EventArgs e)
         {
-            if (currentUser.maxQuestionCount > 0)
+            if (currentUser.maxQuestionCount > 1)
             {
                 int selectedIndex = -1;
 
                 if (option1Rb.Checked) selectedIndex = 0;
-                else
-                if (option2Rb.Checked) selectedIndex = 1;
-                else
-                if (option3Rb.Checked) selectedIndex = 2;
-                else
-                if (option4Rb.Checked) selectedIndex = 3;
+                else if (option2Rb.Checked) selectedIndex = 1;
+                else if (option3Rb.Checked) selectedIndex = 2;
+                else if (option4Rb.Checked) selectedIndex = 3;
 
                 if (selectedIndex == -1)
                 {
@@ -60,20 +57,16 @@ namespace Word_Memorizing_Game
 
                 if (selectedIndex == correctIndex)
                 {
-                    MessageBox.Show("Dogru cevap!");
-                    User user = new User();
-                    user.SaveProgress(currentUser.UserId, this.CurrentWordId);
+                    MessageBox.Show("Doğru cevap!");
+                    currentUser.SaveProgress(currentUser.UserId, this.CurrentWordId);  
                 }
                 else
                 {
                     MessageBox.Show("Yanlış cevap.");
-                    User newq = new User();
-                    newq.startExam(this);
                 }
 
-                User next = new User();
-                next.startExam(this);
-                currentUser.maxQuestionCount--;
+                currentUser.maxQuestionCount--; 
+                currentUser.startExam(this);    
             }
             else
             {
@@ -85,9 +78,9 @@ namespace Word_Memorizing_Game
                 option4Rb.Enabled = false;
                 return;
             }
-            
         }
-    
+
+
 
     }
 }

@@ -19,7 +19,7 @@ namespace Word_Memorizing_Game
         public string UserName { get; private set; }
         public string UserPassword { get; private set; }
 
-        public int maxQuestionCount = 10;
+        public int maxQuestionCount;
 
         private readonly string connectionString = "Data Source=BERATZ\\SQLEXPRESS;Initial Catalog=GameDb;Integrated Security=True";
 
@@ -107,72 +107,87 @@ namespace Word_Memorizing_Game
             {
                 connection.Open();
 
-                string maxwordcountQuery = "SELECT COUNT(*) FROM tblWords";
-                SqlCommand maxwordcountCommand = new SqlCommand(maxwordcountQuery, connection);
-                int maxWordCount = (int)maxwordcountCommand.ExecuteScalar();
+                
+                string validWordsQuery = "SELECT wp.WordID FROM tblWordProgress wp WHERE wp.UserId = @uid AND (wp.NextTestDate IS NULL OR wp.NextTestDate <= GETDATE())";
+
+                SqlCommand validWordsCommand = new SqlCommand(validWordsQuery, connection);
+                validWordsCommand.Parameters.AddWithValue("@uid", this.UserId);
+
+                List<int> eligibleWordIds = new List<int>();
+                using (SqlDataReader reader = validWordsCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        eligibleWordIds.Add(Convert.ToInt32(reader["WordID"]));
+                    }
+                }
+
+                if (eligibleWordIds.Count < 1)
+                {
+                    MessageBox.Show("No available words for today's exam.");
+                    form.checkAnswerButton.Enabled = false;
+                    form.option1Rb.Enabled = false;
+                    form.option2Rb.Enabled = false;
+                    form.option3Rb.Enabled = false;
+                    form.option4Rb.Enabled = false;
+                    return;
+                }
 
                 Random rnd = new Random();
-                int randomWordId = rnd.Next(1, maxWordCount);
+                int randomWordId = eligibleWordIds[rnd.Next(eligibleWordIds.Count)];
                 form.CurrentWordId = randomWordId;
 
-                string wordQuery = "SELECT WordID, EngWordName, TurWordName, Picture FROM tblWords WHERE WordID = @wordid";
+                string wordQuery = "SELECT EngWordName, TurWordName, Picture FROM tblWords WHERE WordID = @wordid";
                 SqlCommand wordCommand = new SqlCommand(wordQuery, connection);
                 wordCommand.Parameters.AddWithValue("@wordid", randomWordId);
 
-                SqlDataReader reader = wordCommand.ExecuteReader();
-
-                string picturePath = "";
                 string engWord = "";
                 string correctTurWord = "";
+                string picturePath = "";
 
-                if (reader.Read())
+                using (SqlDataReader reader = wordCommand.ExecuteReader())
                 {
-                    engWord = reader["EngWordName"].ToString();
-                    correctTurWord = reader["TurWordName"].ToString();
-                    picturePath = reader["Picture"].ToString();
+                    if (reader.Read())
+                    {
+                        engWord = reader["EngWordName"].ToString();
+                        correctTurWord = reader["TurWordName"].ToString();
+                        picturePath = reader["Picture"].ToString();
+                    }
                 }
-                reader.Close();
 
-                
                 if (File.Exists(picturePath))
                 {
                     form.wordPictureBox.Image = Image.FromFile(picturePath);
                 }
                 else
                 {
-                    form.wordPictureBox.Image = null; 
+                    form.wordPictureBox.Image = null;
                 }
 
-
                 string sentenceQuery = "SELECT Samples FROM tblWordSamples WHERE WordID = @wordid";
-                
                 SqlCommand sentenceCommand = new SqlCommand(sentenceQuery, connection);
                 sentenceCommand.Parameters.AddWithValue("@wordid", randomWordId);
-                
-                
                 string sampleSentence = sentenceCommand.ExecuteScalar()?.ToString() ?? "No sample available.";
 
                 string distractorsQuery = @"
-                                            SELECT TOP 3 TurWordName 
-                                            FROM tblWords 
-                                            WHERE WordID != @wordid 
-                                            ORDER BY NEWID()";
+            SELECT TOP 3 TurWordName 
+            FROM tblWords 
+            WHERE WordID != @wordid 
+            ORDER BY NEWID()";
 
                 SqlCommand distractorsCommand = new SqlCommand(distractorsQuery, connection);
                 distractorsCommand.Parameters.AddWithValue("@wordid", randomWordId);
 
                 List<string> options = new List<string>();
-                
-                SqlDataReader distractorReader = distractorsCommand.ExecuteReader();
-                
-                while (distractorReader.Read())
+                using (SqlDataReader distractorReader = distractorsCommand.ExecuteReader())
                 {
-                    options.Add(distractorReader["TurWordName"].ToString());
+                    while (distractorReader.Read())
+                    {
+                        options.Add(distractorReader["TurWordName"].ToString());
+                    }
                 }
-                
-                distractorReader.Close();
 
-
+                // Insert the correct answer randomly into the options
                 int correctIndex = rnd.Next(0, 4);
                 options.Insert(correctIndex, correctTurWord);
 
@@ -183,12 +198,11 @@ namespace Word_Memorizing_Game
                 form.option3Rb.Text = options[2];
                 form.option4Rb.Text = options[3];
 
-                
-                form.Tag = correctIndex;             
-            
-               
+                form.Tag = correctIndex;
             }
         }
+
+
 
         public void SaveProgress(int userId, int wordId)
         {
