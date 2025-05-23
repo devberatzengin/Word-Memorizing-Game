@@ -202,8 +202,6 @@ namespace Word_Memorizing_Game
             }
         }
 
-
-
         public void SaveProgress(int userId, int wordId)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

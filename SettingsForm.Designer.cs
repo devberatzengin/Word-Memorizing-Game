@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.setButton = new System.Windows.Forms.Button();
             this.resetProgressButton = new System.Windows.Forms.Button();
+            this.ReportPdfButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +105,7 @@
             // 
             this.resetProgressButton.BackColor = System.Drawing.Color.Tomato;
             this.resetProgressButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.resetProgressButton.Location = new System.Drawing.Point(32, 260);
+            this.resetProgressButton.Location = new System.Drawing.Point(32, 276);
             this.resetProgressButton.Name = "resetProgressButton";
             this.resetProgressButton.Size = new System.Drawing.Size(316, 93);
             this.resetProgressButton.TabIndex = 6;
@@ -112,12 +113,25 @@
             this.resetProgressButton.UseVisualStyleBackColor = false;
             this.resetProgressButton.Click += new System.EventHandler(this.resetProgressButton_Click);
             // 
+            // ReportPdfButton
+            // 
+            this.ReportPdfButton.BackColor = System.Drawing.Color.Orange;
+            this.ReportPdfButton.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ReportPdfButton.Location = new System.Drawing.Point(441, 276);
+            this.ReportPdfButton.Name = "ReportPdfButton";
+            this.ReportPdfButton.Size = new System.Drawing.Size(316, 93);
+            this.ReportPdfButton.TabIndex = 7;
+            this.ReportPdfButton.Text = "Get Report With Pdf";
+            this.ReportPdfButton.UseVisualStyleBackColor = false;
+            this.ReportPdfButton.Click += new System.EventHandler(this.ReportPdfButton_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ReportPdfButton);
             this.Controls.Add(this.resetProgressButton);
             this.Controls.Add(this.setButton);
             this.Controls.Add(this.label1);
@@ -145,5 +159,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button setButton;
         private System.Windows.Forms.Button resetProgressButton;
+        private System.Windows.Forms.Button ReportPdfButton;
     }
 }
