@@ -59,10 +59,14 @@ namespace Word_Memorizing_Game
                 {
                     MessageBox.Show("Doğru cevap!");
                     currentUser.SaveProgress(currentUser.UserId, this.CurrentWordId);  
+                    // Correct Counter ++
+                    CorrectCounter.Text = "Correct: "+(int.Parse(CorrectCounter.Text.Split(':')[1]) + 1).ToString();
                 }
                 else
                 {
                     MessageBox.Show("Yanlış cevap.");
+                    // Wrong Counter ++
+                    WrongCounter.Text = "Wrong: "+(int.Parse(WrongCounter.Text.Split(':')[1]) + 1).ToString();
                 }
 
                 currentUser.maxQuestionCount--; 
@@ -80,7 +84,6 @@ namespace Word_Memorizing_Game
             }
         }
 
-
-
+        
     }
 }

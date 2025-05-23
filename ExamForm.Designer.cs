@@ -39,6 +39,8 @@
             this.option4Rb = new System.Windows.Forms.RadioButton();
             this.checkAnswerButton = new System.Windows.Forms.Button();
             this.wordPictureBox = new System.Windows.Forms.PictureBox();
+            this.CorrectCounter = new System.Windows.Forms.Label();
+            this.WrongCounter = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wordPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -156,11 +158,34 @@
             // 
             // wordPictureBox
             // 
-            this.wordPictureBox.Location = new System.Drawing.Point(418, 103);
+            this.wordPictureBox.Location = new System.Drawing.Point(418, 168);
             this.wordPictureBox.Name = "wordPictureBox";
-            this.wordPictureBox.Size = new System.Drawing.Size(331, 261);
+            this.wordPictureBox.Size = new System.Drawing.Size(331, 196);
             this.wordPictureBox.TabIndex = 13;
             this.wordPictureBox.TabStop = false;
+            // 
+            // CorrectCounter
+            // 
+            this.CorrectCounter.AutoSize = true;
+            this.CorrectCounter.BackColor = System.Drawing.Color.Silver;
+            this.CorrectCounter.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CorrectCounter.ForeColor = System.Drawing.Color.ForestGreen;
+            this.CorrectCounter.Location = new System.Drawing.Point(415, 103);
+            this.CorrectCounter.Name = "CorrectCounter";
+            this.CorrectCounter.Size = new System.Drawing.Size(116, 31);
+            this.CorrectCounter.TabIndex = 14;
+            this.CorrectCounter.Text = "Correct: 0";
+            // 
+            // WrongCounter
+            // 
+            this.WrongCounter.AutoSize = true;
+            this.WrongCounter.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.WrongCounter.ForeColor = System.Drawing.Color.Tomato;
+            this.WrongCounter.Location = new System.Drawing.Point(595, 103);
+            this.WrongCounter.Name = "WrongCounter";
+            this.WrongCounter.Size = new System.Drawing.Size(110, 31);
+            this.WrongCounter.TabIndex = 15;
+            this.WrongCounter.Text = "Wrong: 0";
             // 
             // ExamForm
             // 
@@ -168,6 +193,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.WrongCounter);
+            this.Controls.Add(this.CorrectCounter);
             this.Controls.Add(this.wordPictureBox);
             this.Controls.Add(this.checkAnswerButton);
             this.Controls.Add(this.option4Rb);
@@ -203,5 +230,7 @@
         public System.Windows.Forms.RadioButton option4Rb;
         public System.Windows.Forms.PictureBox wordPictureBox;
         public System.Windows.Forms.Button checkAnswerButton;
+        private System.Windows.Forms.Label CorrectCounter;
+        private System.Windows.Forms.Label WrongCounter;
     }
 }
