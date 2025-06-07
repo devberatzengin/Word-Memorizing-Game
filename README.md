@@ -15,14 +15,14 @@ Bu sistem “ezberleyip unutma” yerine, **tekrar ederek öğrenme** üzerine k
 ## 🚀 Özellikler (User Stories)
 
 | ID  | Story Açıklaması                                                                 | Durum  |
-|-----|----------------------------------------------------------------------------------|--------|
-| 1   | Kullanıcı kayıt, giriş ve "şifremi unuttum" sistemi                              | ✅     |
-| 2   | Kelime ekleme (metin, resim, örnek cümle, opsiyonel ses)                         | ✅     |
-| 3   | 6 sefer tekrar algoritması ile çalışan sınav modülü                              | ✅     |
-| 4   | Ayarlar ekranı (günlük gösterilecek kelime sayısı belirleme)                     | ✅     |
-| 5   | Kullanıcı bazlı analiz raporu ve çıktı alma özelliği                             | ✅     |
-| 6   | Bulmaca (wordle tarzı, öğrenilen kelimelerle)                                    | ✅     |
-| 7   | Word Chain (LLM ile hikaye ve görsel üretimi - opsiyonel)                        | ❌     |
+|-----|---------------------------------------------------------------------------------------------------|--------|
+| 1   | Kullanıcı kayıt, giriş ve "şifremi unuttum" sistemi                                               | ✅     |
+| 2   | Kelime ekleme (metin, resim, örnek cümle, opsiyonel ses)                                          | ✅     |
+| 3   | 6 sefer tekrar algoritması ile çalışan sınav modülü                                               | ✅     |
+| 4   | Ayarlar ekranı (günlük gösterilecek kelime sayısı belirleme)                                      | ✅     |
+| 5   | Kullanıcı bazlı analiz raporu ve çıktı alma özelliği,İlerleme sıfırlma                            | ✅     |
+| 6   | Bulmaca (wordle tarzı, öğrenilen kelimelerle)                                                     | ✅     |
+| 7   | Word Chain (LLM ile hikaye ve görsel üretimi - opsiyonel)                                         | ❌     |
 
 ---
 
@@ -32,8 +32,6 @@ Bu sistem “ezberleyip unutma” yerine, **tekrar ederek öğrenme** üzerine k
 - MySQL
 - Entity Framework
 - Gömülü medya desteği (resim, ses)
-- Opsiyonel: OpenAI API (LLM desteği için)
-
 ---
 
 ## 🧪 6 Sefer Tekrar Algoritması
@@ -122,7 +120,7 @@ Tarihe bağlı otomatik kelime seçimi algoritması uygulanmıştır.
 | Scrum table (Trello)      | ✅    |
 | Git commit geçmişi        | ✅    |
 | Help doküman (README.md)  | ✅    |
-| Video gönderimi           | 🔜    |
+| Video gönderimi           | ✅    |
 | Mobil APK desteği         | ❌    |
 
 ---
@@ -132,7 +130,6 @@ Tarihe bağlı otomatik kelime seçimi algoritması uygulanmıştır.
 - [x] Kelime şıkları rastgele
 - [ ] Soruları boş bırakma ve geri dönme
 - [ ] Zorluk seviyesine göre filtreleme
-- [ ] Sınav sorumlusu ekranı (yolda)
 
 ---
 
